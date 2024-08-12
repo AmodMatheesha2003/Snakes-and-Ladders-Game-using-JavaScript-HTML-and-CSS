@@ -1,0 +1,731 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(220, 228, 228);
+}
+
+.game_home {
+  position: relative;
+  margin-left: 10%;
+  margin-top: 30px;
+  border: 15px solid #313131;
+  border-radius: 40px;
+  width: 80%;
+  height: 702px;
+  box-shadow: 0 0 15px rgba(52, 52, 52, 0.8),
+    inset 0 0 20px rgba(44, 43, 43, 0.3);
+  z-index: 10;
+}
+
+.game_home .background_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 27px;
+  position: absolute;
+  z-index: 5;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.game_fisrt_interface .logo_game {
+  height: 350px;
+  width: 550px;
+  margin-left: 300px;
+  margin-top: 30px;
+  position: absolute;
+  z-index: 10;
+  animation: scaleImage 2s ease-in-out infinite;
+}
+
+@keyframes scaleImage {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #353434;
+  margin-top: 40px;
+  cursor: pointer;
+  margin-left: 90%;
+  z-index: 25;
+}
+
+.circle i {
+  color: #ffffff;
+  font-size: 25px;
+  z-index: 35;
+}
+
+.game_fisrt_interface .play_button_img {
+  position: relative;
+  z-index: 25;
+  border-radius: 16px;
+  width: 180px;
+  height: 90px;
+  margin-top: 37%;
+  margin-left: 42%;
+  cursor: pointer;
+  animation: scaleImage2 5s ease-in-out 1s infinite;
+}
+
+@keyframes scaleImage2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.circle_for_select_options {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 45%;
+  bottom: 20px;
+  z-index: 24;
+  display: none;
+}
+
+.game_selectmode_interface {
+  width: 590px;
+  height: 400px;
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 8%;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  border: 10px solid #292828;
+  z-index: 24;
+  border-radius: 40px;
+  display: none;
+}
+
+.interfaceback_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.game_selectmode_interface h2 {
+  position: absolute;
+  font-size: 46px;
+  font-family: "Bowlby One SC", sans-serif;
+  margin-left: 120px;
+  margin-top: 25px;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.game_selectmode_interface .selection_mode {
+  margin-top: 150px;
+  margin-left: 30px;
+  height: 120px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
+.players {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(27, 118, 35, 0.618);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 3;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.players.selected {
+  background-color: rgba(33, 208, 48, 0.459);
+}
+
+#four {
+  flex-direction: column;
+}
+
+#three {
+  flex-direction: column;
+}
+.selection_mode .players i {
+  color: whitesmoke;
+  font-size: 20px;
+  position: relative;
+}
+
+.game_selectmode_interface .next_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 80%;
+  margin-top: 10%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 25;
+}
+
+.game_username_interface .next_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 80%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.next_container P {
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: x-large;
+  font-weight: 700;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.next_container:hover {
+  transform: scale(1.1);
+}
+
+.next_container i {
+  font-size: x-large;
+  font-size: 35px;
+  margin-top: 3px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.circle_footer {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 4px solid rgb(83, 83, 83);
+  cursor: pointer;
+}
+
+.circle_footer.active {
+  border: 4px solid rgb(83, 83, 83);
+  background-color: rgb(41, 255, 29);
+}
+
+input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.289);
+  width: 330px;
+  height: 50px;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.442);
+  margin-left: 100px;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: x-large;
+  padding-left: 80px;
+  position: relative;
+  outline: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.game_username_interface {
+  width: 590px;
+  height: 400px;
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 8%;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  border: 10px solid #292828;
+  z-index: 24;
+  border-radius: 40px;
+  display: none;
+}
+
+.game_username_interface h2 {
+  position: absolute;
+  font-size: 46px;
+  font-family: "Bowlby One SC", sans-serif;
+  margin-left: 100px;
+  margin-top: 10px;
+  color: #ffffff;
+  padding: 0%;
+}
+
+.user_input_name {
+  margin-top: 60px;
+}
+.user1 {
+  position: relative;
+  display: none;
+}
+
+.user1.active {
+  display: block;
+}
+
+.user1 img {
+  position: absolute;
+  left: 55px;
+}
+
+.attachment_image_ani {
+  z-index: 40;
+  margin-top: 20rem;
+  position: relative;
+  margin-left: 58rem;
+  display: none;
+  animation: moveXY 5s infinite alternate;
+}
+
+@keyframes moveXY {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.game_userlevel_select_interface {
+  width: 590px;
+  height: 400px;
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 8%;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  border: 10px solid #292828;
+  z-index: 24;
+  border-radius: 40px;
+  display: none;
+}
+
+.game_userlevel_select_interface h2 {
+  position: absolute;
+  font-size: 46px;
+  font-family: "Bowlby One SC", sans-serif;
+  margin-left: 100px;
+  margin-top: 10px;
+  color: #ffffff;
+  padding: 0%;
+}
+
+.LEVEL_container {
+  width: 100%;
+  height: 50px;
+  margin-top: 100px;
+  position: relative;
+  margin-left: 20px;
+}
+
+.LEVEL_container2 {
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+  position: relative;
+  margin-left: 20px;
+}
+
+.LEVEL_container3 {
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+  position: relative;
+  margin-left: 20px;
+}
+
+.LEVEL_container h3 {
+  margin-left: 150px;
+  position: relative;
+  color: rgba(0, 0, 0, 0.871);
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.LEVEL_container2 h3 {
+  margin-left: 150px;
+  position: relative;
+  color: rgba(0, 0, 0, 0.871);
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.LEVEL_container3 h3 {
+  margin-left: 150px;
+  position: relative;
+  color: rgba(0, 0, 0, 0.871);
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.easy_mode {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: 4px solid rgb(0, 0, 0);
+  background-color: #344a2900;
+  z-index: 36;
+  margin-left: 100px;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 19px;
+}
+
+.easy_mode_selected {
+  background-color: rgba(45, 255, 7, 0.667);
+}
+
+.game_userlevel_select_interface .next_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 80%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.game_userlevel_select_interface .next_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 80%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.in-game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 20;
+  display: none;
+  gap: 200px;
+}
+
+.board {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.board-img {
+  object-fit: cover;
+  width: 580px;
+  height: 580px;
+  position: absolute;
+  z-index: 12;
+}
+
+.board-border-image {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.882);
+}
+
+.dice {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+  font-family: sans-serif;
+  border-radius: 15px;
+}
+
+.dice-roll-btn {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border: none;
+  background-color: rgb(109, 247, 171);
+  border-radius: 15px;
+  border: 3px solid rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.dice-roll-btn.disable {
+  background-color: rgba(0, 0, 0, 0.473);
+  border: 3px solid rgba(0, 0, 0, 0.507);
+}
+
+.dice-roll-btn img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.board .square {
+  position: relative;
+  border: 1px solid rgb(255, 0, 0);
+  z-index: 20;
+}
+
+.square .playerDisc1 {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  background-color: rgb(40, 255, 2);
+  border-radius: 50%;
+  box-shadow: 0 0 0px 3px rgb(26, 3, 140);
+  display: none;
+}
+
+.square .playerDisc2 {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 15px;
+  left: 35px;
+  background-color: rgb(1, 247, 255);
+  border-radius: 50%;
+  box-shadow: 0 0 0px 3px rgb(0, 3, 4);
+  display: none;
+}
+
+.square .playerDisc3 {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 35px;
+  left: 8px;
+  background-color: rgb(255, 86, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 0px 3px rgb(19, 1, 111);
+  display: none;
+}
+
+.square .playerDisc4 {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  background-color: rgb(0, 103, 229);
+  border-radius: 50%;
+  box-shadow: 0 0 0px 3px rgb(26, 3, 140);
+  display: none;
+}
+
+.square .playerDisc1.active,
+.square .playerDisc2.active,
+.square .playerDisc3.active,
+.square .playerDisc4.active {
+  display: block;
+}
+
+.current-player-name {
+  position: absolute;
+  top: -90px;
+  left: 10px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dice_all_images_six {
+  position: absolute;
+  left: 10%;
+  top: 40%;
+}
+
+.dice-img {
+  width: 120px;
+  height: 120px;
+}
+
+.close-restart-btns {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  gap: 20px;
+  right: 8px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  font-family: sans-serif;
+}
+
+.restart-btn {
+  border: none;
+  background-color: rgb(0, 224, 0);
+  padding: 10px 5px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 20px black;
+  color: white;
+  cursor: pointer;
+}
+
+.home-btn {
+  border: none;
+  padding: 10px 5px;
+  background-color: orangered;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 20px black;
+  cursor: pointer;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.players-in-game {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-in-game {
+  width: 220px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  height: 60px;
+  filter: brightness(0.1);
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.player-in-game.current {
+  filter: brightness(1);
+}
+
+.player-in-game img {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  width: 80px;
+  height: 80px;
+}
+
+.player-in-game p {
+  font-family: "Poppins", sans-serif;
+  font-size: larger;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.players-default-area {
+  position: absolute;
+  bottom: -28px;
+  left: -32%;
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  background-color: rgba(4, 183, 192, 0.199);
+  border: 5px solid black;
+}
+
+#dice-player1 {
+  position: absolute;
+  top: 30px;
+  left: 24px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 4px rgb(26, 3, 140);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+#dice-player2 {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 4px rgb(0, 3, 4);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+#dice-player3 {
+  position: absolute;
+  top: 90px;
+  left: 24px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 4px rgb(19, 1, 111);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+#dice-player4 {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 4px rgb(26, 3, 140);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+#dice-player1.remove,
+#dice-player2.remove,
+#dice-player3.remove,
+#dice-player4.remove {
+  display: none;
+}

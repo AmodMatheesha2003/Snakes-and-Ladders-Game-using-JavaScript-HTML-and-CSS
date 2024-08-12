@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNAKES & LADDERS</title>
+    <link rel="shortcut icon" href="./images/snake.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="main-container game_home">
+      <div class="close-restart-btns">
+        <button class="home-btn">Home</button>
+        <button class="restart-btn">Restart</button>
+      </div>
+      <div class="in-game-container">
+        <div class="player-container">
+          <div class="players-in-game">
+          </div>
+          <div class="dice">
+            <img src="./images/dice1.png" class="dice-img" />
+            <button class="dice-roll-btn">
+              <img src="./images/dice_16462602.png" />
+            </button>
+          </div>
+        </div>
+        <div class="board">
+          <img src="./images/board.jpg" class="board-img" />
+          <img src="./images/wall.jpg" class="board-border-image" />
+          <div class="players-default-area">
+            <div id="dice-player1" class="remove"></div>
+            <div id="dice-player2" class="remove"></div>
+            <div id="dice-player3" class="remove"></div>
+            <div id="dice-player4" class="remove"></div>
+          </div>
+        </div>
+      </div>
+
+      <img src="./images/game-gui_172107-1619.avif" class="background_image" />
+
+      <div class="circle">
+        <i class="fa-solid fa-info"></i>
+      </div>
+
+      <div class="circle_for_select_options">
+        <div class="circle_footer"></div>
+        <div class="circle_footer"></div>
+        <div class="circle_footer"></div>
+      </div>
+
+      <div class="game_fisrt_interface">
+        <img
+          src="./images/snakesnladders-header-thumbnail.png"
+          class="logo_game"
+        />
+        <img
+          src="./images/Green-play-button-icon-on-transparent-background-PNG.png"
+          class="play_button_img start-button"
+        />
+      </div>
+
+      <div class="game_selectmode_interface">
+        <img
+          src="./images/game-gui_172107-1619.avif"
+          class="interfaceback_image"
+        />
+
+        <h2>GAME MODE</h2>
+
+        <form class="select-mode-form">
+          <input type="radio" id="mode1" name="mode" value="1" checked />
+          <input type="radio" id="mode2" name="mode" value="2" />
+          <input type="radio" id="mode3" name="mode" value="3" />
+          <input type="radio" id="mode4" name="mode" value="4" />
+
+          <div class="selection_mode">
+            <label class="players selected" for="mode1">
+              <i class="fa-solid fa-robot"></i>
+              <i class="fa-solid fa-user"></i>
+            </label>
+
+            <label class="players" for="mode2">
+              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-user"></i>
+            </label>
+
+            <label class="players" for="mode3" id="three">
+              <i class="fa-solid fa-user"></i>
+              <div>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </label>
+
+            <label class="players" for="mode4" id="four">
+              <div>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </label>
+          </div>
+
+          <button class="next_container">
+            <p>NEXT</p>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <script>
+        document.querySelectorAll(".players").forEach((label) => {
+          label.addEventListener("click", function () {
+            document
+              .querySelectorAll(".players")
+              .forEach((lbl) => lbl.classList.remove("selected"));
+
+            this.classList.add("selected");
+          });
+        });
+      </script>
+
+      <div class="game_username_interface">
+        <img
+          src="./images/game-gui_172107-1619.avif"
+          class="interfaceback_image"
+        />
+        <h2>PLAYER NAME</h2>
+
+        <form class="player-details-form">
+          <div class="user_input_name">
+            <div class="user1">
+              <input type="text" name="player1" autocomplete="off" />
+
+              <img
+                style="margin-left: 10px; margin-top: 4px"
+                width="64"
+                height="64"
+                src="https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-300x300.png"
+                class="attachment_thumbnail"
+                alt="Movie Bomb"
+                decoding="async"
+                loading="lazy"
+                srcset="
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-300x300.png  300w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-400x400.png  400w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-800x800.png  800w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-768x768.png  768w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-30x30.png     30w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-75x75.png     75w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-110x110.png  110w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-160x160.png  160w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-500x500.png  500w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-50x50.png     50w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-100x100.png  100w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-200x200.png  200w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-256x256.png  256w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-512x512.png  512w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie.png         1000w
+                "
+                sizes="(max-width: 300px) 100vw, 300px"
+              />
+            </div>
+
+            <div class="user1">
+              <input type="text" name="player2" autocomplete="off" />
+
+              <img
+                width="80"
+                height="80"
+                src="https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_350x350_CharacterDimensio_Courtney_Movie-300x300.png"
+                class="attachment-thumbnail"
+                alt=""
+                decoding="async"
+                loading="lazy"
+                srcset="
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_350x350_CharacterDimensio_Courtney_Movie-300x300.png 300w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_350x350_CharacterDimensio_Courtney_Movie.png         350w
+                "
+                sizes="(max-width: 300px) 100vw, 300px"
+              />
+            </div>
+
+            <div class="user1">
+              <input type="text" name="player3" autocomplete="off" />
+
+              <img
+                width="90"
+                height="90"
+                src="https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-300x300.png"
+                class="attachment-thumbnail size-thumbnail wp-post-image"
+                alt="Movie Red"
+                decoding="async"
+                srcset="
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-300x300.png  300w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-400x400.png  400w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-800x800.png  800w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-768x768.png  768w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-30x30.png     30w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-75x75.png     75w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-110x110.png  110w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-160x160.png  160w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-500x500.png  500w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-50x50.png     50w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-100x100.png  100w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-200x200.png  200w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-256x256.png  256w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie-512x512.png  512w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_Movie.png         1000w
+                "
+                sizes="(max-width: 300px) 100vw, 300px"
+              />
+            </div>
+
+            <div class="user1">
+              <input type="text" name="player4" autocomplete="off" />
+              <img
+                width="90"
+                height="90"
+                src="https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_1000x1000_CharacterDimensio_Stella_Movie-1-300x300.png"
+                class="attachment-thumbnail size-thumbnail wp-post-image"
+                alt=""
+                decoding="async"
+                loading="lazy"
+                srcset="
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_1000x1000_CharacterDimensio_Stella_Movie-1-300x300.png  300w,
+                  https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_1000x1000_CharacterDimensio_Stella_Movie-1.png         1000w
+                "
+                sizes="(max-width: 300px) 100vw, 300px"
+              />
+            </div>
+          </div>
+
+          <button class="next_container">
+            <p>NEXT</p>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="game_userlevel_select_interface">
+        <img
+          src="./images/game-gui_172107-1619.avif"
+          class="interfaceback_image"
+        />
+        <h2>SELECT LEVEL</h2>
+
+        <form class="select-level-form">
+          <input type="radio" id="level1" name="level" value="E" checked />
+          <input type="radio" id="level2" name="level" value="M" />
+          <input type="radio" id="level3" name="level" value="H" />
+
+          <div class="LEVEL_container">
+            <label class="easy_mode easy_mode_selected" for="level1"></label>
+            <h3>EASY</h3>
+          </div>
+
+          <div class="LEVEL_container2">
+            <label class="easy_mode" for="level2"></label>
+            <h3>MEDIUM</h3> 
+          </div>
+
+          <div class="LEVEL_container3">
+            <label class="easy_mode" for="level3"></label>
+            <h3>HARD</h3>
+          </div>
+
+          <button class="next_container">
+            <p>NEXT</p>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <script>
+        document.querySelectorAll(".easy_mode").forEach((label) => {
+          label.addEventListener("click", function () {
+            document
+              .querySelectorAll(".easy_mode")
+              .forEach((lbl) => lbl.classList.remove("easy_mode_selected"));
+
+            this.classList.add("easy_mode_selected");
+          });
+        });
+      </script>
+
+      <img
+        width="220"
+        height="220"
+        src="https://www.angrybirds.com/wp-content/uploads/2024/05/Hamylton-300x300.png"
+        class="attachment_image_ani"
+        alt=""
+        decoding="async"
+        loading="lazy"
+      />
+    </div>
+  </body>
+</html>
